@@ -17,6 +17,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.widget.NestedScrollView;
+import android.view.MotionEvent;
 
 import com.example.mycaja.model.ItemCategoria;
 import com.example.mycaja.model.ItemMovimiento;
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private BarChart barChartCategorias;
     private PieChart pieChartProductos;
     private LinearLayout listaCategorias, listaProductos;
+    private NestedScrollView nestedScrollProductos;
     private LinearLayout listaOtrosProductosEstrella;
 
     // Spinners para filtros
@@ -99,19 +102,18 @@ public class MainActivity extends AppCompatActivity {
         initProductosEstrella();
     }
 
-
     private void initSpinners() {
         spinnerProductos = findViewById(R.id.spinnerProductos);
         spinnerPeriodo = findViewById(R.id.spinnerPeriodo);
 
         // Datos para spinner de productos
         String[] productos = {
-            "Productos", "Bebidas", "Comida", "Postres", "Entradas", "Platos principales"
+                "Productos", "Bebidas", "Comida", "Postres", "Entradas", "Platos principales"
         };
 
         // Datos para spinner de período
         String[] periodos = {
-            "Últimos 7 días", "Últimos 15 días", "Último mes", "Últimos 3 meses", "Este año"
+                "Últimos 7 días", "Últimos 15 días", "Último mes", "Últimos 3 meses", "Este año"
         };
 
         // Configurar adapters personalizados
@@ -125,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
         spinnerProductos.setSelection(0);
         spinnerPeriodo.setSelection(0);
     }
-
 
     private void initCardIngresos() {
         cardIngresos = findViewById(R.id.cardIngresos);
@@ -221,27 +222,27 @@ public class MainActivity extends AppCompatActivity {
         // Configurar headers de la tabla
         cardMovimientosIngresos.setHeaders("Fecha de ingreso", "Usuario", "Concepto", "Monto");
 
-        // Datos estáticos de ejemplo - Puedes cambiar a lista vacía para probar el estado vacío
+        // Datos estáticos de ejemplo - Puedes cambiar a lista vacía para probar el
+        // estado vacío
         List<ItemTablaFila> datosMovimientos = new ArrayList<>();
         datosMovimientos.add(new ItemTablaFila(
                 "00/00/0000", "04:05 P.M.",
                 "Jean Pierre Santillán García",
                 "Ingreso por confirmación de <b>Delivery #31765</b> con forma de pago <b>En línea</b>",
-                "S/20.00"
-        ));
+                "S/20.00"));
         datosMovimientos.add(new ItemTablaFila(
                 "00/00/0000", "04:05 P.M.",
                 "Jean Pierre Santillán García",
                 "Ingreso por confirmación de <b>Delivery #31765</b> con forma de pago <b>En línea</b>",
-                "S/20.00"
-        ));
+                "S/20.00"));
 
         cardMovimientosIngresos.setTablaData(datosMovimientos);
 
         // Los footers solo se muestran si hay datos
         if (!datosMovimientos.isEmpty()) {
             cardMovimientosIngresos.setFooter1("TOTAL INGRESOS (Efectivo y Tarjeta)", "S/ 0.00");
-            cardMovimientosIngresos.setFooter2("TOTAL INGRESOS POR DELIVERY (En línea, transferencia, Yape, Plin)", "S/ 40.00");
+            cardMovimientosIngresos.setFooter2("TOTAL INGRESOS POR DELIVERY (En línea, transferencia, Yape, Plin)",
+                    "S/ 40.00");
         }
     }
 
@@ -253,7 +254,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Datos estáticos de ejemplo con 5 columnas
         List<ItemTablaFila> datosMovimientos = new ArrayList<>();
-
 
         cardMovimientosEgresos.setTablaData(datosMovimientos);
 
@@ -384,8 +384,8 @@ public class MainActivity extends AppCompatActivity {
         // Listener para Tab Productos Estrellas
         tabProductosEstrellas.setOnClickListener(v -> selectTab(false));
 
-        // Establecer estado inicial - Productos Estrellas activo (para probar)
-        selectTab(false);
+        // Establecer estado inicial - Top Ventas activo
+        selectTab(true);
     }
 
     private void selectTab(boolean isTopVentas) {
@@ -449,7 +449,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Datos de productos para el pie chart - Orden correcto según leyenda
         List<ItemCategoria> productos = new ArrayList<>();
-
 
         productos.add(new ItemCategoria("Torta helada", "S/10.39", 15f, colorPrimary)); // Verde - 55%
         productos.add(new ItemCategoria("Ensalada Cesar's", "S/40.39", 30f, colorYellow)); // Amarillo - 15%
@@ -521,14 +520,14 @@ public class MainActivity extends AppCompatActivity {
         // Establecer datos
         barChartCategorias.setData(barData);
 
-        // Configurar renderer personalizado DESPUÉS de setData para que los buffers estén inicializados
+        // Configurar renderer personalizado DESPUÉS de setData para que los buffers
+        // estén inicializados
         int backgroundColor = ContextCompat.getColor(this, R.color.text_5);
         RoundedBarChartRenderer renderer = new RoundedBarChartRenderer(
                 barChartCategorias,
                 barChartCategorias.getAnimator(),
                 barChartCategorias.getViewPortHandler(),
-                backgroundColor
-        );
+                backgroundColor);
         renderer.setRadius(50f);
         renderer.initBuffers();
         barChartCategorias.setRenderer(renderer);
@@ -554,7 +553,8 @@ public class MainActivity extends AppCompatActivity {
             colorDot.setBackground(dotDrawable);
 
             // Agregar puntos suspensivos entre el nombre y el monto
-            tvNombre.setText(cat.getNombre() + " ...........................................................................");
+            tvNombre.setText(
+                    cat.getNombre() + " ...........................................................................");
             tvMonto.setText(cat.getMonto());
 
             listaCategorias.addView(itemView);
@@ -627,13 +627,26 @@ public class MainActivity extends AppCompatActivity {
 
     private void initProductosEstrella() {
         listaOtrosProductosEstrella = findViewById(R.id.listaOtrosProductosEstrella);
+        nestedScrollProductos = findViewById(R.id.nestedScrollProductos);
+
+        // Fix para el scroll anidado: evita comportamiento anidado y que el padre
+        // intercepte
+        nestedScrollProductos.setNestedScrollingEnabled(false);
+        nestedScrollProductos.setOnTouchListener((v, event) -> {
+            int action = event.getAction();
+            if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            return false;
+        });
 
         // Datos mock de otros productos estrella
         List<ItemProductoEstrella> productos = new ArrayList<>();
         productos.add(new ItemProductoEstrella(2, "P", "Cerveza Pilsen", "650ml", "150 VENTAS", "52,45%"));
         productos.add(new ItemProductoEstrella(3, "P", "Lomo saltado", "Plato", "120 VENTAS", "48,30%"));
         productos.add(new ItemProductoEstrella(4, "P", "Ronda criolla familiar", "Fuente", "98 VENTAS", "42,15%"));
-        productos.add(new ItemProductoEstrella(5, "P", "Tallarines verdes con chuleta", "Personal", "85 VENTAS", "38,50%"));
+        productos.add(
+                new ItemProductoEstrella(5, "P", "Tallarines verdes con chuleta", "Personal", "85 VENTAS", "38,50%"));
         productos.add(new ItemProductoEstrella(6, "I", "Pollo", "Entero", "72 VENTAS", "35,20%"));
         productos.add(new ItemProductoEstrella(7, "P", "Mayonesa", "Personal", "65 VENTAS", "30,10%"));
         productos.add(new ItemProductoEstrella(8, "P", "Arroz chaufa", "Personal", "58 VENTAS", "28,45%"));
@@ -644,7 +657,8 @@ public class MainActivity extends AppCompatActivity {
         listaOtrosProductosEstrella.removeAllViews();
 
         for (ItemProductoEstrella producto : productos) {
-            View itemView = LayoutInflater.from(this).inflate(R.layout.item_producto_estrella, listaOtrosProductosEstrella, false);
+            View itemView = LayoutInflater.from(this).inflate(R.layout.item_producto_estrella,
+                    listaOtrosProductosEstrella, false);
 
             TextView tvRanking = itemView.findViewById(R.id.tvRanking);
             TextView tvLetraInicial = itemView.findViewById(R.id.tvLetraInicial);
@@ -664,4 +678,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-

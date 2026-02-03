@@ -1369,8 +1369,7 @@
                             android:id="@+id/grafico2Container"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:visibility="gone">
+                            android:orientation="horizontal">
 
                             <!-- Card izquierda: Producto #1 Estrella -->
                             <LinearLayout
