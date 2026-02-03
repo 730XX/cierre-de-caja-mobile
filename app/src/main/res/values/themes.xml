@@ -1,0 +1,59 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyCaja" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.MyCaja" parent="Base.Theme.MyCaja" />
+
+    <style name="fontListas" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_list_size</item>
+        <item name="android:textColor">@color/text_85</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+    <style name="fontListasMedium" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/text_list_size</item>
+        <item name="android:textColor">@color/text_85</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="titleCards" parent="android:Widget.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/info</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Estilos para Footers -->
+    <style name="footerTitulo" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_65</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="footerValor" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_85</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <!-- Estilos para elementos de Cards/Tablas -->
+    <style name="cardItemLabel" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_65</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="cardItemValue" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_85</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <!-- Estilo para headers de tabla -->
+    <style name="tableHeader" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_65</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+</resources>

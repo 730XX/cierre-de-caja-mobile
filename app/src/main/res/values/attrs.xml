@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BotonReutilizable">
+        <attr name="tipoBoton" format="enum">
+            <enum name="bordeado" value="0"/>
+            <enum name="relleno" value="1"/>
+        </attr>
+        <attr name="colorBase" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="CardResumen">
+        <!-- Header -->
+        <attr name="cardTitulo" format="string"/>
+        <attr name="cardIcono" format="reference"/>
+        <attr name="cardColorTitulo" format="color"/>
+
+        <!-- Footer -->
+        <attr name="cardMostrarFooter" format="boolean"/>
+        <attr name="cardTituloFooter" format="string"/>
+        <attr name="cardValorFooter" format="string"/>
+        <attr name="cardColorFooter" format="color"/>
+
+        <!-- Tipo de contenido -->
+        <attr name="cardTipoContenido" format="enum">
+            <enum name="recycler" value="0"/>
+            <enum name="columnas" value="1"/>
+        </attr>
+        <attr name="cardNumColumnas" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CardTabla">
+        <attr name="tablaTitulo" format="string"/>
+        <attr name="tablaIcono" format="reference"/>
+        <attr name="tablaColorTitulo" format="color"/>
+    </declare-styleable>
+</resources>

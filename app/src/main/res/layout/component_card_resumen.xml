@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_rounded"
+    android:clipToOutline="true"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:background="@drawable/border_bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="7dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/ivIcono"
+            android:layout_width="14dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            tools:src="@drawable/icon_svg_arrow_trend_up_blue" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Ingresos" />
+    </LinearLayout>
+
+    <!-- Contenedor del contenido (RecyclerView o Columnas) - Expandible -->
+    <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp">
+
+        <!-- RecyclerView para listas dinámicas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone" />
+
+        <!-- LinearLayout para columnas estáticas -->
+        <LinearLayout
+            android:id="@+id/columnasContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <!-- Footer - Siempre al fondo para que el contenido se adapte dinamicamente -->
+    <LinearLayout
+        android:id="@+id/footerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvTituloFooter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/footerTitulo"
+            tools:text="TOTAL INGRESOS" />
+
+        <TextView
+            android:id="@+id/tvCantidadFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:paddingHorizontal="8dp"
+            style="@style/footerValor"
+            android:visibility="gone"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tvValorFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="1"
+            style="@style/footerValor"
+            tools:text="S/ 7,937.79" />
+    </LinearLayout>
+
+</LinearLayout>

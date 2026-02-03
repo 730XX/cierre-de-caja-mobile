@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_rounded"
+    android:clipToOutline="true"
+    android:orientation="vertical">
+
+    <!-- Header del Card -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:background="@drawable/border_bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="7dp"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/ivIcono"
+            android:layout_width="14dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            tools:src="@drawable/icon_svg_arrow_trend_up_blue" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Movimientos de ingresos extra" />
+    </LinearLayout>
+
+    <!-- Header de la tabla -->
+    <LinearLayout
+        android:id="@+id/tablaHeaderContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="7dp"
+        android:layout_marginHorizontal="8dp"
+        android:background="@drawable/border_bottom">
+
+        <TextView
+            android:id="@+id/tvHeader1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/tableHeader"
+            tools:text="Fecha de ingreso"/>
+
+        <TextView
+            android:id="@+id/tvHeader2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center_horizontal"
+            style="@style/tableHeader"
+            tools:text="Usuario"/>
+
+        <TextView
+            android:id="@+id/tvHeader3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            style="@style/tableHeader"
+            tools:text="Concepto"/>
+
+        <TextView
+            android:id="@+id/tvHeader4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="end"
+            style="@style/tableHeader"
+            tools:text="Monto"/>
+
+        <TextView
+            android:id="@+id/tvHeader5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="end"
+            style="@style/tableHeader"
+            android:visibility="gone"
+            tools:text="Monto"/>
+
+    </LinearLayout>
+
+    <!-- Estado vacío -->
+    <LinearLayout
+        android:id="@+id/emptyStateContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingVertical="16dp"
+        android:paddingHorizontal="15dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivEmptyIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/icon_svg_info_circle"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvEmptyMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No hay egresos registrados"
+            style="@style/cardItemLabel"/>
+
+    </LinearLayout>
+
+    <!-- RecyclerView para las filas de la tabla -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTabla"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:nestedScrollingEnabled="false"/>
+
+    <!-- Footer con totales -->
+    <LinearLayout
+        android:id="@+id/footerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Fila de total 1 -->
+        <LinearLayout
+            android:id="@+id/footerRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/info_5"
+            android:paddingHorizontal="12dp"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:paddingVertical="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvFooterTitulo1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/footerTitulo"
+                tools:text="TOTAL INGRESOS (Efectivo y Tarjeta)"/>
+
+            <TextView
+                android:id="@+id/tvFooterValor1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/footerValor"
+                tools:text="S/ 0.00"/>
+        </LinearLayout>
+
+        <!-- Fila de total 2 -->
+        <LinearLayout
+            android:id="@+id/footerRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/info_5"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvFooterTitulo2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/footerTitulo"
+                tools:text="TOTAL INGRESOS POR DELIVERY"/>
+
+            <TextView
+                android:id="@+id/tvFooterValor2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/footerValor"
+                tools:text="S/ 40.00"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Botón Mostrar más -->
+    <LinearLayout
+        android:id="@+id/mostrarMasContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:background="@drawable/border_top"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvMostrarMas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mostrar más"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@color/info"
+            android:textSize="13sp"/>
+
+        <ImageView
+            android:id="@+id/ivMostrarMasIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/icon_svg_chevron_down"
+            android:rotation="0"/>
+
+    </LinearLayout>
+
+</LinearLayout>
