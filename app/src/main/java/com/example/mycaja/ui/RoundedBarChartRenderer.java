@@ -85,7 +85,7 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
 
     @Override
     public void drawValues(Canvas c) {
-        // Dibujar valores debajo de las barras
+        // Dibujar valores ENCIMA de las barras
         if (!isDrawingValuesAllowed(mChart))
             return;
 
@@ -95,10 +95,12 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
             if (!shouldDrawValues(dataSet))
                 continue;
 
-            // Configurar paint para los valores con roboto_medium 14sp
-            mValuePaint.setTextSize(Utils.convertDpToPixel(14f));
+            // Configurar paint para los valores
+            // Usar el tamaño configurado en el dataSet
+            mValuePaint.setTextSize(dataSet.getValueTextSize());
             mValuePaint.setTextAlign(Paint.Align.CENTER);
             mValuePaint.setTypeface(android.graphics.Typeface.create("sans-serif-medium", android.graphics.Typeface.NORMAL));
+            mValuePaint.setColor(dataSet.getValueTextColor());
 
             ValueFormatter formatter = dataSet.getValueFormatter();
 
@@ -108,8 +110,8 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
 
             for (int j = 0; j < buffer.buffer.length; j += 4) {
                 float left = buffer.buffer[j];
+                float top = buffer.buffer[j + 1];
                 float right = buffer.buffer[j + 2];
-                float bottom = buffer.buffer[j + 3];
 
                 int entryIndex = j / 4;
                 BarEntry entry = dataSet.getEntryForIndex(entryIndex);
@@ -123,7 +125,8 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
                 // Posición X: centro de la barra
                 float x = (left + right) / 2f;
 
-                // Posición Y: debajo de la barra
+                // Posición Y: DEBAJO de la barra (bottom + offset)
+                float bottom = buffer.buffer[j + 3];
                 float y = bottom + Utils.convertDpToPixel(15f);
 
                 // Color del valor igual al de la barra

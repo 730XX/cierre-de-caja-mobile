@@ -118,7 +118,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No hay egresos registrados"
-            style="@style/cardItemLabel"/>
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/text_10"
+            android:textSize="12sp"/>
 
     </LinearLayout>
 

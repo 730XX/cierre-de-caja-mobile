@@ -1,5 +1,6 @@
 package com.example.mycaja.adapter;
 
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mycaja.R;
 import com.example.mycaja.model.ItemMovimiento;
+import com.example.mycaja.utils.TextUtils;
 
 import java.util.List;
 
@@ -33,8 +35,18 @@ public class MovimientosAdapter extends RecyclerView.Adapter<MovimientosAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemMovimiento item = items.get(position);
+
+        // El concepto no necesita negritas (es solo "Facturas", "Boletas", etc.)
         holder.tvConcepto.setText(item.getConcepto());
-        holder.tvMonto.setText(item.getMonto());
+
+        // Aplicar negritas SOLO a códigos y números específicos en el MONTO
+        // Ejemplo: "Serie F002 del 00002266 al 00002267" -> solo F002, 00002266, 00002267 en negrita
+        SpannableString montoConNegrita = TextUtils.aplicarNegritaConRegex(
+            item.getMonto(),
+            "\\b[A-Z]\\d+\\b",     // Códigos como F002, B001 (con límites de palabra)
+            "\\b\\d{5,}\\b"        // Números de 5+ dígitos como 00002266 (con límites de palabra)
+        );
+        holder.tvMonto.setText(montoConNegrita);
 
         // Mostrar columna del medio solo si tiene cantidad
         if (item.tieneCantidad()) {

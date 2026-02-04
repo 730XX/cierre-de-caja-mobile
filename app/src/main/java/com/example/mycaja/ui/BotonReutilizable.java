@@ -32,7 +32,7 @@ public class BotonReutilizable extends MaterialButton {
     }
 
     private void init(@Nullable AttributeSet attrs) {
-        setCornerRadius(16);
+        setCornerRadius(8);
         setIconGravity(ICON_GRAVITY_TEXT_START);
         setIconPadding(20);
         setAllCaps(false);

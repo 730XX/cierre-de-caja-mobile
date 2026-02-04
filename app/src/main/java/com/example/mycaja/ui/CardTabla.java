@@ -3,6 +3,7 @@ package com.example.mycaja.ui;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mycaja.R;
 import com.example.mycaja.adapter.TablaAdapter;
 import com.example.mycaja.model.ItemTablaFila;
+import com.example.mycaja.utils.TextUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -300,7 +302,22 @@ public class CardTabla extends LinearLayout {
      */
     public void setTablaData(List<ItemTablaFila> items) {
         if (items == null || items.isEmpty()) {
-            showEmptyState("No hay registros");
+            showEmptyState("No hay egresos registros");
+            mostrarMasContainer.setVisibility(View.GONE);
+        } else {
+            hideEmptyState();
+            adapter = new TablaAdapter(items);
+            recyclerTabla.setAdapter(adapter);
+            mostrarMasContainer.setVisibility(View.GONE);
+        }
+    }
+
+    /**
+     * Configura los datos de la tabla con mensaje personalizado para estado vacío
+     */
+    public void setTablaData(List<ItemTablaFila> items, String emptyMessage) {
+        if (items == null || items.isEmpty()) {
+            showEmptyState(emptyMessage);
             mostrarMasContainer.setVisibility(View.GONE);
         } else {
             hideEmptyState();
@@ -360,6 +377,8 @@ public class CardTabla extends LinearLayout {
     public void setFooter1(String titulo, String valor) {
         footerContainer.setVisibility(View.VISIBLE);
         footerRow1.setVisibility(View.VISIBLE);
+
+        // NO aplicar negritas automáticas - el texto del footer se muestra tal cual
         tvFooterTitulo1.setText(titulo);
         tvFooterValor1.setText(valor);
     }
@@ -379,6 +398,8 @@ public class CardTabla extends LinearLayout {
     public void setFooter2(String titulo, String valor) {
         footerContainer.setVisibility(View.VISIBLE);
         footerRow2.setVisibility(View.VISIBLE);
+
+        // NO aplicar negritas automáticas - el texto del footer se muestra tal cual
         tvFooterTitulo2.setText(titulo);
         tvFooterValor2.setText(valor);
 

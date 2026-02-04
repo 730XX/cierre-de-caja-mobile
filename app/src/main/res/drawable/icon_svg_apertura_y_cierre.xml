@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- CAPA 1: Mano en la base (más abajo) -->
+    <item
+        android:drawable="@drawable/icon_svg_hand_holding"
+        android:gravity="bottom|center_horizontal"
+        android:width="24dp"
+        android:height="24dp"
+        android:bottom="-14dp" />
+
+    <!-- CAPA 2: Candado abierto (más arriba y más a la derecha) -->
+    <item
+        android:drawable="@drawable/icon_svg_lock"
+        android:gravity="top|start"
+        android:width="11dp"
+        android:height="12dp"
+        android:bottom="12dp"
+        android:start="3dp" />
+
+    <!-- CAPA 3: Moneda con dólar (superior derecha) -->
+    <item
+        android:drawable="@drawable/icon_svg_circle_dolar"
+        android:gravity="bottom|end"
+        android:width="10dp"
+        android:height="10dp"
+        android:bottom="7.8dp"
+        android:end="1.3dp"
+        />
+
+</layer-list>

@@ -23,11 +23,10 @@
             android:paddingBottom="8dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/icon_svg_cash_register"
-                app:tint="@color/text_85" />
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_svg_apertura_y_cierre" />
+
 
             <TextView
                 style="@style/Theme.MyCaja"
@@ -37,6 +36,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:text="@string/title"
                 android:textColor="@color/text_85"
+                android:layout_marginLeft="10dp"
                 android:textSize="24sp" />
 
             <com.example.mycaja.ui.BotonReutilizable
@@ -121,6 +121,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/tvTotalCajaPrincipal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/montserrat_bold"
@@ -169,10 +170,11 @@
                                         android:textSize="13sp" />
 
                                     <TextView
+                                        android:id="@+id/tvUsuarioNombre"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat"
-                                        android:text="Mónica González"
+                                        android:text="-"
                                         android:textColor="@color/text_85"
                                         android:textSize="13sp" />
                                 </LinearLayout>
@@ -198,6 +200,7 @@
                                         android:textSize="13sp" />
 
                                     <TextView
+                                        android:id="@+id/tvAperturaMonto"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat"
@@ -239,6 +242,7 @@
                                         android:textSize="13sp" />
 
                                     <TextView
+                                        android:id="@+id/tvTurnoNombre"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat"
@@ -269,6 +273,7 @@
                                         android:textSize="13sp" />
 
                                     <TextView
+                                        android:id="@+id/tvFechaApertura"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
@@ -366,6 +371,7 @@
                                     app:tint="@color/text_65" />
 
                                 <TextView
+                                    android:id="@+id/tvFechaResumen"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/montserrat_bold"
@@ -401,6 +407,7 @@
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:id="@+id/tvEnEfectivo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto_medium"
@@ -435,6 +442,7 @@
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:id="@+id/tvEnTarjetas"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto_medium"
@@ -469,6 +477,7 @@
                                     android:text="Total en caja" />
 
                                 <TextView
+                                    android:id="@+id/tvTotalCajaResumen"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     style="@style/footerValor"
@@ -620,6 +629,7 @@
                                         android:textColor="@color/text_25" />
 
                                     <TextView
+                                        android:id="@+id/tvCreditosGenerados"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat_bold"
@@ -646,6 +656,7 @@
                                         android:textColor="@color/text_25" />
 
                                     <TextView
+                                        android:id="@+id/tvTotalCreditos"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat_bold"
@@ -673,6 +684,7 @@
                                         android:textColor="@color/text_25" />
 
                                     <TextView
+                                        android:id="@+id/tvValesPago"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat_bold"
@@ -698,6 +710,7 @@
                                         android:textColor="@color/text_25" />
 
                                     <TextView
+                                        android:id="@+id/tvMontoValesPago"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/montserrat_bold"
@@ -774,6 +787,7 @@
                                             android:textColor="@color/text_25" />
 
                                         <TextView
+                                            android:id="@+id/tvMesasAtendidas"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:fontFamily="@font/montserrat_bold"
@@ -797,6 +811,7 @@
                                             android:textColor="@color/text_25"/>
 
                                         <TextView
+                                            android:id="@+id/tvPersonasAtendidas"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:fontFamily="@font/montserrat_bold"
@@ -865,6 +880,7 @@
                                             android:textColor="@color/text_25" />
 
                                         <TextView
+                                            android:id="@+id/tvImpuestosIgv"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:fontFamily="@font/montserrat_bold"
@@ -888,6 +904,7 @@
                                             android:textColor="@color/text_25" />
 
                                         <TextView
+                                            android:id="@+id/tvImpuestosIcbper"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:fontFamily="@font/montserrat_bold"
@@ -1527,7 +1544,7 @@
                                                 android:layout_marginEnd="2dp"
                                                 android:text="10,000"
                                                 android:textColor="@color/white"
-                                                android:textSize="36sp" />
+                                                android:textSize="24sp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"

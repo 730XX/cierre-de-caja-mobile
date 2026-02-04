@@ -1,6 +1,7 @@
 package com.example.mycaja.adapter;
 
 import android.text.Html;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mycaja.R;
 import com.example.mycaja.model.ItemTablaFila;
+import com.example.mycaja.utils.TextUtils;
 
 import java.util.List;
 
@@ -24,7 +26,6 @@ public class TablaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private static final int VIEW_TYPE_5_COL = 2;
     private static final int VIEW_TYPE_3_COL_NOBORDER = 10;
     private static final int VIEW_TYPE_4_COL_NOBORDER = 11;
-
     private List<ItemTablaFila> items;
 
     public TablaAdapter(List<ItemTablaFila> items) {
@@ -134,11 +135,28 @@ public class TablaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
 
     private void setHtmlText(TextView tv, String text) {
-        if (text != null && text.contains("<b>")) {
-            tv.setText(Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT));
-        } else {
+        if (text == null) {
             tv.setText(text);
+            return;
         }
+
+        String textoFinal = text;
+
+        // Si contiene HTML, convertir a texto plano primero
+        if (text.contains("<b>")) {
+            textoFinal = Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT).toString();
+        }
+
+        // Aplicar negritas a palabras clave específicas y patrones
+        String[] palabrasClave = {"En línea", "En linea", "Delivery", "POS", "Efectivo", "Tarjeta"};
+        String[] patronesRegex = {
+            "#[0-9]+",         // Hashtags como #31765
+            "[A-Z][0-9]+",     // Códigos como F002, B001
+            "[0-9]{4,}"        // Números de 4+ dígitos como 00002266
+        };
+
+        SpannableString spannable = TextUtils.aplicarNegritaCombinado(textoFinal, palabrasClave, patronesRegex);
+        tv.setText(spannable);
     }
 
     @Override
