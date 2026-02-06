@@ -34,7 +34,7 @@ public class BotonReutilizable extends MaterialButton {
     private void init(@Nullable AttributeSet attrs) {
         setCornerRadius(8);
         setIconGravity(ICON_GRAVITY_TEXT_START);
-        setIconPadding(20);
+        setIconPadding(8); //<--- separacion entre el icono y el texto
         setAllCaps(false);
         setTextSize(14);
         setLetterSpacing(0);
@@ -42,10 +42,8 @@ public class BotonReutilizable extends MaterialButton {
         setPadding(16, 20, 16, 20);
 
         if (attrs != null) {
-            // Asegúrate de que en attrs.xml el declare-styleable se llame "BotonReutilizable"
             try (TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.BotonReutilizable)) {
                 tipoBoton = a.getInt(R.styleable.BotonReutilizable_tipoBoton, 0);
-
                 int colorDefault = getContext().getColor(com.google.android.material.R.color.design_default_color_primary);
                 colorBase = a.getColor(R.styleable.BotonReutilizable_colorBase, colorDefault);
             }

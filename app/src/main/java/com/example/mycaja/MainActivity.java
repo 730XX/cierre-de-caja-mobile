@@ -55,27 +55,23 @@ public class MainActivity extends AppCompatActivity {
     private CardTabla cardMovimientosIngresos, cardMovimientosEgresos;
     private CardTabla cardIngresosEfectivo, cardIngresosDelivery;
     private CardTabla cardIngresosPropinas, cardIngresosCreditos;
-
     // TextViews para datos de caja y resumen
     private TextView tvUsuarioNombre, tvAperturaMonto, tvTurnoNombre, tvFechaApertura;
     private TextView tvTotalCajaPrincipal, tvFechaResumen, tvEnEfectivo, tvEnTarjetas, tvTotalCajaResumen;
     private TextView tvCreditosGenerados, tvTotalCreditos, tvValesPago, tvMontoValesPago;
     private TextView tvMesasAtendidas, tvPersonasAtendidas;
     private TextView tvImpuestosIgv, tvImpuestosIcbper;
-
     // Tabs
     private LinearLayout tabTopVentas, tabProductosEstrellas;
     private LinearLayout contentTopVentas, contentProductosEstrellas;
     private ImageView iconTopVentas, iconProductosEstrellas;
     private TextView tvTabTopVentas, tvTabProductosEstrellas;
-
     // Gráficos
     private BarChart barChartCategorias;
     private PieChart pieChartProductos;
     private LinearLayout listaCategorias, listaProductos;
     private NestedScrollView nestedScrollProductos;
     private LinearLayout listaOtrosProductosEstrella;
-
     // Spinners para filtros
     private Spinner spinnerProductos, spinnerPeriodo;
 
@@ -112,16 +108,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Inicializar Tabs
         initTabs();
-
         // Inicializar Gráficos
         initGraficos();
-
         initSpinners();
-
         // Inicializar lista de productos estrella
         initProductosEstrella();
     }
-
     private void initSpinners() {
         spinnerProductos = findViewById(R.id.spinnerProductos);
         spinnerPeriodo = findViewById(R.id.spinnerPeriodo);
@@ -715,8 +707,6 @@ public class MainActivity extends AppCompatActivity {
             listaOtrosProductosEstrella.addView(itemView);
         }
     }
-
-    // ==================== MÉTODOS PARA DESHARDCODEAR DATOS ====================
 
     /**
      * Inicializa los datos de la caja (Usuario, Apertura, Turno, Fecha Apertura, Total en Caja)

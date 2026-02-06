@@ -227,10 +227,8 @@ public class CardResumen extends LinearLayout {
         } catch (Exception e) {
             // Fallback si la fuente no existe
         }
-
         container.addView(tvEtiqueta);
         container.addView(tvValor);
-
         return container;
     }
 

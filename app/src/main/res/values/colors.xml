@@ -26,14 +26,12 @@
     <color name="middle_night">#F5FAFE</color>
     <color name="background_light">#F5F7FC</color>
 
-
     <!-- colores para los graficos, primary e info tambien se usan-->
 
     <color name="yellow">#F2A626</color>
     <color name="warning">#FF8947</color>
     <color name="secondary_1">#6863FB</color>
     <color name="secondary_3">#FF3E7D</color>
-
 
     <!-- colores para las insignias de otros productos top -->
     <color name="secondary">#636E95</color>

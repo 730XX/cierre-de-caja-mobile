@@ -5,14 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
         android:orientation="vertical"
         android:padding="16dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,13 +19,10 @@
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingBottom="8dp">
-
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/icon_svg_apertura_y_cierre" />
-
-
             <TextView
                 style="@style/Theme.MyCaja"
                 android:layout_width="0dp"
@@ -38,7 +33,6 @@
                 android:textColor="@color/text_85"
                 android:layout_marginLeft="10dp"
                 android:textSize="24sp" />
-
             <com.example.mycaja.ui.BotonReutilizable
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -48,43 +42,35 @@
                 app:icon="@drawable/icon_svg_circle_minus"
                 app:tipoBoton="relleno" />
         </LinearLayout>
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-
                 <!--PRIMERA SECCION -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
                     android:orientation="horizontal">
-
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.68"
                         android:orientation="vertical"
                         android:paddingEnd="16dp">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:paddingBottom="10dp">
-
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -92,7 +78,6 @@
                                     android:text="Caja:"
                                     android:textColor="@color/text_65"
                                     android:textSize="14sp" />
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -101,16 +86,13 @@
                                     android:text="Caja N°01"
                                     android:textColor="@color/text_85"
                                     android:textSize="20sp"
-
                                     android:textStyle="bold" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:orientation="vertical">
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -119,7 +101,6 @@
                                     android:textColor="@color/text_85"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
-
                                 <TextView
                                     android:id="@+id/tvTotalCajaPrincipal"
                                     android:layout_width="wrap_content"
@@ -131,13 +112,11 @@
                                     android:textStyle="bold" />
                             </LinearLayout>
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/dimen_10"
                             android:orientation="horizontal">
-
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -146,70 +125,61 @@
                                 android:background="@color/info_5"
                                 android:orientation="vertical"
                                 android:padding="16dp">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="8dp"
                                     android:gravity="center_vertical"
                                     android:orientation="horizontal">
-
                                     <ImageView
                                         android:layout_width="16dp"
                                         android:layout_height="16dp"
                                         android:layout_marginEnd="8dp"
                                         android:src="@drawable/icon_svg_user"
                                         app:tint="@color/text_85" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_bold"
+                                        android:fontFamily="@font/roboto_bold"
                                         android:text="Usuario: "
                                         android:textColor="@color/text_85"
                                         android:textSize="13sp" />
-
                                     <TextView
                                         android:id="@+id/tvUsuarioNombre"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat"
+                                        android:fontFamily="@font/roboto"
                                         android:text="-"
                                         android:textColor="@color/text_85"
                                         android:textSize="13sp" />
                                 </LinearLayout>
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_vertical"
                                     android:orientation="horizontal">
-
                                     <ImageView
                                         android:layout_width="16dp"
                                         android:layout_height="16dp"
                                         android:layout_marginEnd="8dp"
                                         android:src="@drawable/icon_svg_green_circle" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_bold"
+                                        android:fontFamily="@font/roboto_bold"
                                         android:text="Apertura: "
                                         android:textColor="@color/black"
                                         android:textSize="13sp" />
-
                                     <TextView
                                         android:id="@+id/tvAperturaMonto"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat"
+                                        android:fontFamily="@font/roboto"
                                         android:text="S/ 00.00"
                                         android:textColor="@color/text_85"
                                         android:textSize="13sp" />
                                 </LinearLayout>
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -218,111 +188,98 @@
                                 android:background="@color/info_5"
                                 android:orientation="vertical"
                                 android:padding="16dp">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="8dp"
                                     android:gravity="center_vertical"
                                     android:orientation="horizontal">
-
                                     <ImageView
                                         android:layout_width="16dp"
                                         android:layout_height="16dp"
                                         android:layout_marginEnd="8dp"
                                         android:src="@drawable/icon_svg_clock"
                                         app:tint="@color/text_85" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_bold"
+                                        android:fontFamily="@font/roboto_bold"
                                         android:text="Turno: "
                                         android:textColor="@color/black"
                                         android:textSize="13sp" />
-
                                     <TextView
                                         android:id="@+id/tvTurnoNombre"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat"
+                                        android:fontFamily="@font/roboto"
                                         android:text="Mañana"
                                         android:textColor="@color/text_85"
                                         android:textSize="13sp" />
                                 </LinearLayout>
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_vertical"
                                     android:orientation="horizontal">
-
                                     <ImageView
                                         android:layout_width="16dp"
                                         android:layout_height="16dp"
                                         android:layout_marginEnd="8dp"
                                         android:src="@drawable/icon_svg_calendar_clock"
                                         app:tint="@color/text_85" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:fontFamily="@font/montserrat_bold"
+                                        android:fontFamily="@font/roboto_bold"
                                         android:text="Abierto: "
                                         android:textColor="@color/black"
                                         android:textSize="13sp" />
-
                                     <TextView
                                         android:id="@+id/tvFechaApertura"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:fontFamily="@font/montserrat"
+                                        android:fontFamily="@font/roboto"
                                         android:text="30/06 - 04:00 PM"
                                         android:textColor="@color/text_85"
                                         android:textSize="13sp" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
                             <com.example.mycaja.ui.BotonReutilizable
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/dimen_10"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto"
-                                android:text="Arqueo"
+                                android:text="Arqueo caja"
                                 app:colorBase="@color/info"
                                 app:icon="@drawable/icon_svg_cash_register"
                                 app:tipoBoton="bordeado" />
-
                             <com.example.mycaja.ui.BotonReutilizable
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/dimen_10"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto"
-                                android:text="Paloteo"
+                                android:text="Imprimir paloteo"
                                 app:colorBase="@color/info"
                                 app:icon="@drawable/icon_svg_print_blue"
                                 app:tipoBoton="bordeado" />
-
                             <com.example.mycaja.ui.BotonReutilizable
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/dimen_10"
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto"
-                                android:text="Egreso"
+                                android:text="Egreso propina"
                                 app:colorBase="@color/info"
                                 app:icon="@drawable/icon_svg_coin_blue"
                                 app:tipoBoton="bordeado" />
-
                             <com.example.mycaja.ui.BotonReutilizable
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -333,16 +290,13 @@
                                 app:icon="@drawable/icon_svg_arrows_rotate_white"
                                 app:tipoBoton="relleno" />
                         </LinearLayout>
-
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.32"
                         android:orientation="vertical"
                         android:padding="1dp">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -350,7 +304,6 @@
                             android:background="@drawable/border_left"
                             android:paddingTop="5dp"
                             android:paddingBottom="34dp">
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -362,25 +315,21 @@
                                 android:paddingStart="7dp"
                                 android:paddingEnd="16dp"
                                 android:paddingBottom="8dp">
-
                                 <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
                                     android:layout_marginEnd="8dp"
-                                    android:src="@drawable/icon_svg_clock"
+                                    android:src="@drawable/icon_svg_clock_rotate_left"
                                     app:tint="@color/text_65" />
-
                                 <TextView
                                     android:id="@+id/tvFechaResumen"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/montserrat_bold"
-                                    android:text="Resumen hasta 27/12"
+                                    android:text="Resumen hasta 27/12/25, 9:48 AM"
                                     android:textColor="@color/text_85"
                                     android:textSize="13sp" />
                             </LinearLayout>
-
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -389,14 +338,12 @@
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 android:paddingHorizontal="@dimen/dimen_10">
-
                                 <ImageView
                                     android:layout_width="14dp"
                                     android:layout_height="12dp"
                                     android:layout_marginEnd="8dp"
                                     android:src="@drawable/icon_svg_money_bill_wave"
                                     app:tint="@color/text_85" />
-
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -405,7 +352,6 @@
                                     android:text="En efectivo"
                                     android:textColor="@color/text_85"
                                     android:textSize="14sp" />
-
                                 <TextView
                                     android:id="@+id/tvEnEfectivo"
                                     android:layout_width="wrap_content"
@@ -415,7 +361,6 @@
                                     android:textColor="@color/text_85"
                                     android:textSize="14sp" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -424,14 +369,12 @@
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 android:paddingHorizontal="@dimen/dimen_10">
-
                                 <ImageView
                                     android:layout_width="14dp"
                                     android:layout_height="12dp"
                                     android:layout_marginEnd="8dp"
                                     android:src="@drawable/icon_svg_credit_card"
                                     app:tint="@color/text_65" />
-
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -440,7 +383,6 @@
                                     android:text="En tarjetas"
                                     android:textColor="@color/text_65"
                                     android:textSize="14sp" />
-
                                 <TextView
                                     android:id="@+id/tvEnTarjetas"
                                     android:layout_width="wrap_content"
@@ -450,7 +392,6 @@
                                     android:textColor="@color/text_85"
                                     android:textSize="14sp" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -461,21 +402,18 @@
                                 android:orientation="horizontal"
                                 android:paddingHorizontal="@dimen/dimen_10"
                                 android:paddingVertical="10dp">
-
                                 <ImageView
                                     android:layout_width="14dp"
                                     android:layout_height="12dp"
                                     android:layout_marginEnd="8dp"
                                     android:src="@drawable/icon_svg_check_circle"
                                     app:tint="@color/text_65" />
-
                                 <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     style="@style/footerTitulo"
                                     android:text="Total en caja" />
-
                                 <TextView
                                     android:id="@+id/tvTotalCajaResumen"
                                     android:layout_width="wrap_content"
@@ -483,7 +421,6 @@
                                     style="@style/footerValor"
                                     android:text="S/ 6,875.09" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -491,43 +428,40 @@
                                 android:layout_marginBottom="@dimen/dimen_10"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
-                                android:paddingHorizontal="@dimen/dimen_10">
-
+                                android:paddingHorizontal="8dp">
                                 <ImageView
                                     android:layout_width="10dp"
                                     android:layout_height="10dp"
                                     android:layout_marginEnd="8dp"
                                     android:src="@drawable/icon_svg_info_circle"
                                     app:tint="@color/text_10" />
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    android:text="Total en caja = Apertura + ventas + ingresos - egresos"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:text="Total en caja = "
                                     android:textColor="@color/text_10"
-                                    android:textSize="11sp" />
+                                    android:textSize="12sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto"
+                                    android:text="Apertura + ventas + ingresos - egresos"
+                                    android:textColor="@color/text_10"
+                                    android:textSize="12sp" />
                             </LinearLayout>
-
-
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/dimen_10">
-
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
-
                         <!-- Card Ingresos usando componente reutilizable -->
                         <com.example.mycaja.ui.CardResumen
                             android:id="@+id/cardIngresos"
@@ -541,9 +475,7 @@
                             app:cardTituloFooter="TOTAL INGRESOS"
                             app:cardValorFooter="S/ 7,937.79"
                             app:cardColorFooter="@color/primary_5"/>
-
                     </LinearLayout>
-
                     <!-- Columna derecha: Egresos, Créditos, Atenciones e Impuestos -->
                     <LinearLayout
                         android:layout_width="0dp"
@@ -551,7 +483,6 @@
                         android:layout_weight="1"
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
-
                         <!-- Card Egresos usando componente reutilizable -->
                         <com.example.mycaja.ui.CardResumen
                             android:id="@+id/cardEgresos"
@@ -566,7 +497,6 @@
                             app:cardTituloFooter="TOTAL EGRESOS"
                             app:cardValorFooter="S/ 0.00"
                             app:cardColorFooter="@color/danger_5"/>
-
                         <!-- 2. Sección Créditos (weight 1) -->
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -576,7 +506,6 @@
                             android:background="@drawable/border_rounded"
                             android:clipToOutline="true"
                             android:orientation="vertical">
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -586,7 +515,6 @@
                                 android:orientation="horizontal"
                                 android:paddingHorizontal="7dp"
                                 android:paddingVertical="8dp">
-
                                 <ImageView
                                     android:layout_width="14dp"
                                     android:layout_height="12dp"
@@ -594,7 +522,6 @@
                                     android:layout_marginEnd="@dimen/dimen_10"
                                     android:src="@drawable/icon_svg_money_bill_wave"
                                     app:tint="@color/info" />
-
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -604,14 +531,12 @@
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:paddingHorizontal="10dp"
                                 android:paddingVertical="12dp">
-
                                 <!-- Créditos generados (wight 1) -->
                                 <LinearLayout
                                     android:layout_width="0dp"
@@ -619,7 +544,6 @@
                                     android:layout_marginEnd="16dp"
                                     android:layout_weight="1"
                                     android:orientation="vertical">
-
                                     <TextView
                                         style="@style/fontListasMedium"
                                         android:layout_width="wrap_content"
@@ -627,7 +551,6 @@
                                         android:layout_marginBottom="4dp"
                                         android:text="Créditos generados"
                                         android:textColor="@color/text_25" />
-
                                     <TextView
                                         android:id="@+id/tvCreditosGenerados"
                                         android:layout_width="wrap_content"
@@ -637,7 +560,6 @@
                                         android:textColor="@color/text_85"
                                         android:textSize="16sp" />
                                 </LinearLayout>
-
                                 <!-- Total de créditos (wight 1) -->
                                 <LinearLayout
                                     android:layout_width="0dp"
@@ -646,7 +568,6 @@
                                     android:layout_weight="1"
                                     android:paddingLeft="16dp"
                                     android:orientation="vertical">
-
                                     <TextView
                                         style="@style/fontListasMedium"
                                         android:layout_width="wrap_content"
@@ -654,7 +575,6 @@
                                         android:layout_marginBottom="4dp"
                                         android:text="Total de créditos"
                                         android:textColor="@color/text_25" />
-
                                     <TextView
                                         android:id="@+id/tvTotalCreditos"
                                         android:layout_width="wrap_content"
@@ -664,7 +584,6 @@
                                         android:textColor="@color/text_85"
                                         android:textSize="16sp" />
                                 </LinearLayout>
-
                                 <!-- Vales de pago (wight 1) -->
                                 <LinearLayout
                                     android:layout_width="0dp"
@@ -674,7 +593,6 @@
                                     android:paddingLeft="16dp"
                                     android:background="@drawable/border_left"
                                     android:orientation="vertical">
-
                                     <TextView
                                         style="@style/fontListasMedium"
                                         android:layout_width="wrap_content"
@@ -682,7 +600,6 @@
                                         android:layout_marginBottom="4dp"
                                         android:text="Vales de pago"
                                         android:textColor="@color/text_25" />
-
                                     <TextView
                                         android:id="@+id/tvValesPago"
                                         android:layout_width="wrap_content"
@@ -692,7 +609,6 @@
                                         android:textColor="@color/text_85"
                                         android:textSize="16sp" />
                                 </LinearLayout>
-
                                 <!-- Monto vales de pago (wight 1) -->
                                 <LinearLayout
                                     android:layout_width="0dp"
@@ -700,7 +616,6 @@
                                     android:paddingLeft="16dp"
                                     android:layout_weight="1"
                                     android:orientation="vertical">
-
                                     <TextView
                                         style="@style/fontListasMedium"
                                         android:layout_width="wrap_content"
@@ -708,7 +623,6 @@
                                         android:layout_marginBottom="4dp"
                                         android:text="Vales de pago"
                                         android:textColor="@color/text_25" />
-
                                     <TextView
                                         android:id="@+id/tvMontoValesPago"
                                         android:layout_width="wrap_content"
@@ -718,19 +632,14 @@
                                         android:textColor="@color/text_85"
                                         android:textSize="16sp" />
                                 </LinearLayout>
-
                             </LinearLayout>
-
-
                         </LinearLayout>
-
                         <!-- 3. Sección Atenciones e Impuestos (weight 1) -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:orientation="horizontal">
-
                             <!-- Card Atenciones -->
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -740,7 +649,6 @@
                                 android:background="@drawable/border_rounded"
                                 android:clipToOutline="true"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -750,7 +658,6 @@
                                     android:orientation="horizontal"
                                     android:paddingHorizontal="7dp"
                                     android:paddingVertical="8dp">
-
                                     <ImageView
                                         android:layout_width="14dp"
                                         android:layout_height="12dp"
@@ -758,26 +665,22 @@
                                         android:layout_marginEnd="8dp"
                                         android:src="@drawable/icon_svg_bell_concierge"
                                         app:tint="@color/info" />
-
                                     <TextView
                                         style="@style/titleCards"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Atenciones" />
                                 </LinearLayout>
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:padding="12dp">
-
                                     <LinearLayout
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:orientation="vertical">
-
                                         <TextView
                                             style="@style/fontListasMedium"
                                             android:layout_width="wrap_content"
@@ -785,7 +688,6 @@
                                             android:layout_marginBottom="4dp"
                                             android:text="N° mesas atendidas"
                                             android:textColor="@color/text_25" />
-
                                         <TextView
                                             android:id="@+id/tvMesasAtendidas"
                                             android:layout_width="wrap_content"
@@ -795,13 +697,11 @@
                                             android:textColor="@color/text_85"
                                             android:textSize="16sp" />
                                     </LinearLayout>
-
                                     <LinearLayout
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:orientation="vertical">
-
                                         <TextView
                                             style="@style/fontListasMedium"
                                             android:layout_width="wrap_content"
@@ -809,7 +709,6 @@
                                             android:layout_marginBottom="4dp"
                                             android:text="N° personas atendidas"
                                             android:textColor="@color/text_25"/>
-
                                         <TextView
                                             android:id="@+id/tvPersonasAtendidas"
                                             android:layout_width="wrap_content"
@@ -819,11 +718,8 @@
                                             android:textColor="@color/text_85"
                                             android:textSize="16sp" />
                                     </LinearLayout>
-
                                 </LinearLayout>
-
                             </LinearLayout>
-
                             <!-- Card Impuestos -->
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -833,7 +729,6 @@
                                 android:background="@drawable/border_rounded"
                                 android:clipToOutline="true"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -843,7 +738,6 @@
                                     android:orientation="horizontal"
                                     android:paddingHorizontal="7dp"
                                     android:paddingVertical="8dp">
-
                                     <ImageView
                                         android:layout_width="14dp"
                                         android:layout_height="12dp"
@@ -851,26 +745,22 @@
                                         android:layout_marginEnd="8dp"
                                         android:src="@drawable/icon_svg_ticket"
                                         app:tint="@color/info" />
-
                                     <TextView
                                         style="@style/titleCards"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Impuestos" />
                                 </LinearLayout>
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:padding="12dp">
-
                                     <LinearLayout
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:orientation="vertical">
-
                                         <TextView
                                             style="@style/fontListasMedium"
                                             android:layout_width="wrap_content"
@@ -878,7 +768,6 @@
                                             android:layout_marginBottom="4dp"
                                             android:text="Impuestos"
                                             android:textColor="@color/text_25" />
-
                                         <TextView
                                             android:id="@+id/tvImpuestosIgv"
                                             android:layout_width="wrap_content"
@@ -888,13 +777,11 @@
                                             android:textColor="@color/text_85"
                                             android:textSize="16sp" />
                                     </LinearLayout>
-
                                     <LinearLayout
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:orientation="vertical">
-
                                         <TextView
                                             style="@style/fontListasMedium"
                                             android:layout_width="wrap_content"
@@ -902,7 +789,6 @@
                                             android:layout_marginBottom="4dp"
                                             android:text="ICBPER"
                                             android:textColor="@color/text_25" />
-
                                         <TextView
                                             android:id="@+id/tvImpuestosIcbper"
                                             android:layout_width="wrap_content"
@@ -912,19 +798,11 @@
                                             android:textColor="@color/text_85"
                                             android:textSize="16sp" />
                                     </LinearLayout>
-
                                 </LinearLayout>
-
                             </LinearLayout>
-
                         </LinearLayout>
-
-
                     </LinearLayout>
-
-
                 </LinearLayout>
-
                 <!-- TERCERA SECCION: Correlativos, Transacciones hechas, Transacciones anuladas -->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -932,7 +810,6 @@
                     android:layout_marginTop="16dp"
                     android:orientation="horizontal"
                     android:baselineAligned="false">
-
                     <!-- Card Correlativos usados -->
                     <com.example.mycaja.ui.CardResumen
                         android:id="@+id/cardCorrelativos"
@@ -945,7 +822,6 @@
                         app:cardIcono="@drawable/icon_svg_list"
                         app:cardTipoContenido="recycler"
                         app:cardMostrarFooter="false"/>
-
                     <!-- Card Transacciones hechas -->
                     <com.example.mycaja.ui.CardResumen
                         android:id="@+id/cardTransaccionesHechas"
@@ -961,7 +837,6 @@
                         app:cardTituloFooter="TOTAL TRANSACCIONES HECHAS"
                         app:cardValorFooter="S/8,945.41"
                         app:cardColorFooter="@color/info_5"/>
-
                     <!-- Card Transacciones anuladas -->
                     <com.example.mycaja.ui.CardResumen
                         android:id="@+id/cardTransaccionesAnuladas"
@@ -977,9 +852,7 @@
                         app:cardTituloFooter="TOTAL TRANSACCIONES ANULADAS"
                         app:cardValorFooter="0"
                         app:cardColorFooter="@color/info_5"/>
-
                 </LinearLayout>
-
                 <!-- CUARTA SECCION: Movimientos de ingresos extra -->
                 <com.example.mycaja.ui.CardTabla
                     android:id="@+id/cardMovimientosIngresos"
@@ -989,7 +862,6 @@
                     app:tablaTitulo="Movimientos de ingresos extra"
                     app:tablaIcono="@drawable/icon_svg_arrow_trend_up_blue"
                     app:tablaColorTitulo="@color/info"/>
-
                 <!-- QUINTA SECCION: Movimientos de egresos extra -->
                 <com.example.mycaja.ui.CardTabla
                     android:id="@+id/cardMovimientosEgresos"
@@ -1001,7 +873,6 @@
                     app:tablaColorTitulo="@color/info"
                     app:cardColorFooter="@color/primary_5"
                     />
-
                 <!-- SEXTA SECCION: Ingresos en efectivo/tarjetas por ventas y Canales de delivery -->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1009,7 +880,6 @@
                     android:orientation="horizontal"
                     android:baselineAligned="false"
                     android:layout_marginTop="16dp">
-
                     <!-- Card Ingresos en efectivo/tarjetas por ventas -->
                     <com.example.mycaja.ui.CardTabla
                         android:id="@+id/cardIngresosEfectivo"
@@ -1020,7 +890,6 @@
                         app:tablaTitulo="Ingresos en efectivo/tarjetas por ventas"
                         app:tablaIcono="@drawable/icon_svg_arrow_trend_up_blue"
                         app:tablaColorTitulo="@color/info"/>
-
                     <!-- Card Ingresos por canales de delivery -->
                     <com.example.mycaja.ui.CardTabla
                         android:id="@+id/cardIngresosDelivery"
@@ -1031,16 +900,13 @@
                         app:tablaTitulo="Ingresos por canales de delivery"
                         app:tablaIcono="@drawable/icon_svg_mobile"
                         app:tablaColorTitulo="@color/info"/>
-
                 </LinearLayout>
-
                 <!-- Fila: Ingresos por propinas e Ingresos por créditos cobrados -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="16dp">
-
                     <!-- Card Ingresos por propinas -->
                     <com.example.mycaja.ui.CardTabla
                         android:id="@+id/cardIngresosPropinas"
@@ -1051,7 +917,6 @@
                         app:tablaTitulo="Ingresos por propinas"
                         app:tablaIcono="@drawable/icon_svg_arrow_trend_up_blue"
                         app:tablaColorTitulo="@color/info"/>
-
                     <!-- Card Ingresos por créditos cobrados -->
                     <com.example.mycaja.ui.CardTabla
                         android:id="@+id/cardIngresosCreditos"
@@ -1062,22 +927,18 @@
                         app:tablaTitulo="Ingresos por créditos cobrados"
                         app:tablaIcono="@drawable/icon_svg_arrow_trend_up_blue"
                         app:tablaColorTitulo="@color/info"/>
-
                 </LinearLayout>
-
                 <!-- Sección de Tabs: Top Ventas y Productos Estrellas -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginTop="@dimen/dimen_10">
-
                     <!-- Header con Tabs -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-
                         <!-- Tab Top Ventas -->
                         <LinearLayout
                             android:id="@+id/tabTopVentas"
@@ -1090,7 +951,6 @@
                             android:background="@drawable/border_bottom_active"
                             android:clickable="true"
                             android:focusable="true">
-
                             <ImageView
                                 android:id="@+id/iconTopVentas"
                                 android:layout_width="16dp"
@@ -1098,7 +958,6 @@
                                 android:layout_marginEnd="8dp"
                                 android:src="@drawable/icon_svg_crown"
                                 app:tint="@color/info"/>
-
                             <TextView
                                 android:id="@+id/tvTabTopVentas"
                                 android:layout_width="wrap_content"
@@ -1108,7 +967,6 @@
                                 android:textColor="@color/info"
                                 android:textSize="14sp"/>
                         </LinearLayout>
-
                         <!-- Tab Productos Estrellas -->
                         <LinearLayout
                             android:id="@+id/tabProductosEstrellas"
@@ -1121,7 +979,6 @@
                             android:background="@drawable/border_bottom_tab"
                             android:clickable="true"
                             android:focusable="true">
-
                             <ImageView
                                 android:id="@+id/iconProductosEstrellas"
                                 android:layout_width="16dp"
@@ -1129,7 +986,6 @@
                                 android:layout_marginEnd="8dp"
                                 android:src="@drawable/icon_svg_star"
                                 app:tint="@color/text_25"/>
-
                             <TextView
                                 android:id="@+id/tvTabProductosEstrellas"
                                 android:layout_width="wrap_content"
@@ -1139,9 +995,7 @@
                                 android:textColor="@color/text_85"
                                 android:textSize="14sp"/>
                         </LinearLayout>
-
                     </LinearLayout>
-
                     <!-- Contenido de Top Ventas -->
                     <LinearLayout
                         android:id="@+id/contentTopVentas"
@@ -1152,13 +1006,11 @@
                         android:paddingTop="16dp"
                         android:paddingBottom="24dp"
                         android:visibility="visible">
-
                         <!-- Fila con las 2 cards: Por categoría y Por productos -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
                             <!-- Card 1: Por categoría -->
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -1166,7 +1018,6 @@
                                 android:layout_weight="0.55"
                                 android:orientation="vertical"
                                 android:layout_marginEnd="8dp">
-
                                 <!-- Título: Por categoría -->
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -1176,7 +1027,6 @@
                                     android:textColor="@color/text_85"
                                     android:textSize="16sp"
                                     android:layout_marginBottom="16dp"/>
-
                                 <!-- Card con gráfico de barras y lista de categorías -->
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -1184,7 +1034,6 @@
                                     android:orientation="horizontal"
                                     android:background="@drawable/border_rounded_10"
                                     android:padding="16dp">
-
                                     <!-- Sección izquierda: Gráfico de barras -->
                                     <LinearLayout
                                         android:layout_width="0dp"
@@ -1192,7 +1041,6 @@
                                         android:layout_weight="0.5"
                                         android:orientation="vertical"
                                         android:gravity="center">
-
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -1201,7 +1049,6 @@
                                             android:textColor="@color/text_85"
                                             android:textSize="14sp"
                                             android:layout_marginBottom="16dp"/>
-
                                         <!-- Contenedor del gráfico de barras -->
                                         <com.github.mikephil.charting.charts.BarChart
                                             android:id="@+id/barChartCategorias"
@@ -1210,23 +1057,19 @@
                                             android:fontFamily="@font/roboto_medium"
                                             android:textSize="14sp"
                                             />
-
                                     </LinearLayout>
-
                                     <!-- Separador vertical -->
                                     <View
                                         android:layout_width="1dp"
                                         android:layout_height="match_parent"
                                         android:background="@color/text_5"
                                         android:layout_marginHorizontal="16dp"/>
-
                                     <!-- Sección derecha: Lista de categorías -->
                                     <LinearLayout
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="0.5"
                                         android:orientation="vertical">
-
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -1236,20 +1079,15 @@
                                             android:textColor="@color/text_85"
                                             android:textSize="14sp"
                                             android:layout_marginBottom="16dp"/>
-
                                         <!-- Lista de categorías -->
                                         <LinearLayout
                                             android:id="@+id/listaCategorias"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:orientation="vertical"/>
-
                                     </LinearLayout>
-
                                 </LinearLayout>
-
                             </LinearLayout>
-
                             <!-- Card 2: Por productos -->
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -1257,7 +1095,6 @@
                                 android:layout_weight="0.45"
                                 android:orientation="vertical"
                                 android:layout_marginStart="12dp">
-
                                 <!-- Título: Por productos -->
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -1267,7 +1104,6 @@
                                     android:textColor="@color/text_85"
                                     android:textSize="16sp"
                                     android:layout_marginBottom="16dp"/>
-
                                 <!-- Card con gráfico de pie -->
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -1275,7 +1111,6 @@
                                     android:orientation="vertical"
                                     android:background="@drawable/border_rounded_10"
                                     android:padding="16dp">
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -1285,14 +1120,12 @@
                                         android:textSize="14sp"
                                         android:layout_marginBottom="16dp"
                                         android:layout_gravity="center_horizontal"/>
-
                                     <!-- Contenido del pie chart con leyenda -->
                                     <LinearLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:orientation="horizontal"
                                         android:gravity="center_vertical">
-
                                         <!-- Gráfico de pie -->
                                         <LinearLayout
                                             android:layout_width="0dp"
@@ -1301,15 +1134,12 @@
                                             android:paddingHorizontal="15dp"
                                             android:gravity="center"
                                             >
-
                                             <com.github.mikephil.charting.charts.PieChart
                                                 android:id="@+id/pieChartProductos"
                                                 android:layout_width="150dp"
                                                 android:layout_height="150dp"
                                                 />
-
                                         </LinearLayout>
-
                                         <LinearLayout
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
@@ -1322,19 +1152,12 @@
                                                 android:layout_weight="1"
                                                 android:orientation="vertical"
                                                 android:paddingLeft="5dp"/>
-
                                         </LinearLayout>
-
                                     </LinearLayout>
-
                                 </LinearLayout>
-
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                     <!-- Contenido de Productos Estrellas -->
                     <LinearLayout
                         android:id="@+id/contentProductosEstrellas"
@@ -1343,7 +1166,6 @@
                         android:orientation="vertical"
                         android:padding="16dp"
                         android:visibility="gone">
-
                         <!-- Título y Filtros -->
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1351,7 +1173,6 @@
                             android:orientation="horizontal"
                             android:gravity="center_vertical"
                             android:layout_marginBottom="16dp">
-
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -1360,7 +1181,6 @@
                                 android:fontFamily="@font/roboto_medium"
                                 android:textColor="@color/text_85"
                                 android:textSize="14sp"/>
-
                             <!-- Dropdown Productos -->
                             <Spinner
                                 android:id="@+id/spinnerProductos"
@@ -1369,7 +1189,6 @@
                                 android:layout_marginEnd="4dp"
                                 android:minWidth="120dp"
                                 android:background="@null"/>
-
                             <!-- Dropdown Últimos 7 días -->
                             <Spinner
                                 android:id="@+id/spinnerPeriodo"
@@ -1377,9 +1196,7 @@
                                 android:layout_height="wrap_content"
                                 android:minWidth="140dp"
                                 android:background="@null"/>
-
                         </LinearLayout>
-
                         <!-- Cards de Productos Estrella -->
                         <!-- Vista Productos estrella (contenido pendiente) -->
                         <LinearLayout
@@ -1387,7 +1204,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
                             <!-- Card izquierda: Producto #1 Estrella -->
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -1395,21 +1211,17 @@
                                 android:layout_weight="0.25"
                                 android:layout_marginEnd="25dp"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@drawable/border_rounded_10"
-
                                     android:orientation="vertical"
                                     android:clipChildren="false"
                                     android:clipToPadding="false">
-
                                     <!-- Etiqueta "Ranking semanal" -->
                                     <Space
                                         android:layout_width="wrap_content"
                                         android:layout_height="20dp" />
-
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -1421,7 +1233,6 @@
                                         android:text="Ranking semanal"
                                         android:textColor="@color/white"
                                         android:textSize="10sp" />
-
                                     <!-- Contenido con padding -->
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1429,7 +1240,6 @@
                                         android:orientation="vertical"
                                         android:paddingHorizontal="16dp"
                                         android:paddingTop="8dp">
-
                                         <!-- Número #1 con estrella -->
                                         <LinearLayout
                                             android:layout_width="match_parent"
@@ -1437,7 +1247,6 @@
                                             android:gravity="start"
                                             android:layout_marginBottom="4dp"
                                             android:orientation="horizontal">
-
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -1446,7 +1255,6 @@
                                                 android:textColor="@color/info"
                                                 android:layout_gravity="center_vertical"
                                                 android:textSize="44sp" />
-
                                             <ImageView
                                                 android:layout_width="40dp"
                                                 android:layout_height="40dp"
@@ -1455,7 +1263,6 @@
                                                 android:layout_gravity="center_vertical"
                                                 app:tint="@color/yellow_65" />
                                         </LinearLayout>
-
                                         <!-- Título "PRODUCTO ESTRELLA TOP" -->
                                         <TextView
                                             android:layout_width="match_parent"
@@ -1466,7 +1273,6 @@
                                             android:textAlignment="textStart"
                                             android:textColor="@color/info"
                                             android:textSize="14sp" />
-
                                         <!-- Nombre del producto -->
                                         <LinearLayout
                                             android:layout_width="match_parent"
@@ -1474,7 +1280,6 @@
                                             android:gravity="start"
                                             android:layout_marginBottom="16dp"
                                             android:orientation="horizontal">
-
                                             <LinearLayout
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -1491,7 +1296,6 @@
                                                     android:textColor="@color/info"
                                                     android:textSize="12sp" />
                                             </LinearLayout>
-
                                             <LinearLayout
                                                 android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
@@ -1507,7 +1311,6 @@
                                                     android:textColor="@color/text_85"
                                                     android:textSize="18sp"
                                                     android:layout_gravity="center_vertical"/>
-
                                                 <!-- Categoría -->
                                                 <TextView
                                                     android:id="@+id/tvProductoEstrellaCategoria"
@@ -1520,7 +1323,6 @@
                                             </LinearLayout>
                                         </LinearLayout>
                                     </LinearLayout>
-
                                     <!-- Estadísticas de ventas - Sin padding para llegar a los bordes -->
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1528,14 +1330,12 @@
                                         android:background="@drawable/background_info"
                                         android:orientation="horizontal"
                                         android:padding="10dp">
-
                                         <!-- Número de ventas -->
                                         <LinearLayout
                                             android:layout_width="0dp"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:orientation="horizontal">
-
                                             <TextView
                                                 android:id="@+id/tvProductoEstrellaVentas"
                                                 android:layout_width="wrap_content"
@@ -1545,7 +1345,6 @@
                                                 android:text="10,000"
                                                 android:textColor="@color/white"
                                                 android:textSize="24sp" />
-
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
@@ -1554,14 +1353,12 @@
                                                 android:textColor="@color/white"
                                                 android:textSize="14sp" />
                                         </LinearLayout>
-
                                         <!-- Porcentaje con flecha -->
                                         <LinearLayout
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center_vertical"
                                             android:orientation="horizontal">
-
                                             <ImageView
                                                 android:layout_width="12dp"
                                                 android:layout_height="12dp"
@@ -1569,7 +1366,6 @@
                                                 android:layout_gravity="center_vertical"
                                                 android:src="@drawable/icon_svg_caret_up"
                                                 app:tint="@color/white" />
-
                                             <TextView
                                                 android:id="@+id/tvProductoEstrellaPorcentaje"
                                                 android:layout_width="wrap_content"
@@ -1580,10 +1376,8 @@
                                                 android:textSize="12sp" />
                                         </LinearLayout>
                                     </LinearLayout>
-
                                 </LinearLayout>
                             </LinearLayout>
-
                             <!-- Card derecha: Otros productos estrella -->
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -1592,13 +1386,11 @@
                                 android:paddingStart="20dp"
                                 android:background="@drawable/border_left"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical"
                                     android:padding="8dp">
-
                                     <!-- Título "OTROS PRODUCTOS ESTRELLA TOP" -->
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -1614,41 +1406,30 @@
                                             android:textColor="@color/info"
                                             android:textSize="14sp" />
                                     </LinearLayout>
-
                                     <!-- Wrapper para limitar altura máxima -->
                                     <FrameLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content">
-
                                         <androidx.core.widget.NestedScrollView
                                             android:id="@+id/nestedScrollProductos"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:maxHeight="400dp"
                                             android:overScrollMode="never">
-
                                             <!-- Lista de otros productos -->
                                             <LinearLayout
                                                 android:id="@+id/listaOtrosProductosEstrella"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:orientation="vertical" />
-
                                         </androidx.core.widget.NestedScrollView>
-
                                     </FrameLayout>
                                 </LinearLayout>
                             </LinearLayout>
-
                         </LinearLayout>
-
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
-
         </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

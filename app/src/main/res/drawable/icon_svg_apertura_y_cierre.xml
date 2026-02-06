@@ -22,10 +22,10 @@
     <item
         android:drawable="@drawable/icon_svg_circle_dolar"
         android:gravity="bottom|end"
-        android:width="10dp"
-        android:height="10dp"
-        android:bottom="7.8dp"
-        android:end="1.3dp"
+        android:width="8dp"
+        android:height="8dp"
+        android:bottom="8.5dp"
+        android:end="2.3dp"
         />
 
 </layer-list>

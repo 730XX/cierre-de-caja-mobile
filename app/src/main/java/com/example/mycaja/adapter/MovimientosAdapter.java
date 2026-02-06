@@ -35,12 +35,7 @@ public class MovimientosAdapter extends RecyclerView.Adapter<MovimientosAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ItemMovimiento item = items.get(position);
-
-        // El concepto no necesita negritas (es solo "Facturas", "Boletas", etc.)
         holder.tvConcepto.setText(item.getConcepto());
-
-        // Aplicar negritas SOLO a códigos y números específicos en el MONTO
-        // Ejemplo: "Serie F002 del 00002266 al 00002267" -> solo F002, 00002266, 00002267 en negrita
         SpannableString montoConNegrita = TextUtils.aplicarNegritaConRegex(
             item.getMonto(),
             "\\b[A-Z]\\d+\\b",     // Códigos como F002, B001 (con límites de palabra)

@@ -1,10 +1,8 @@
 package com.example.mycaja.ui;
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-
 import com.github.mikephil.charting.animation.ChartAnimator;
 import com.github.mikephil.charting.buffer.BarBuffer;
 import com.github.mikephil.charting.data.BarEntry;
@@ -21,11 +19,9 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
 
     private float mRadius = 10f;
     private Paint mBackgroundPaint;
-
     public RoundedBarChartRenderer(BarDataProvider chart, ChartAnimator animator,
                                    ViewPortHandler viewPortHandler, int backgroundColor) {
         super(chart, animator, viewPortHandler);
-
         mBackgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mBackgroundPaint.setStyle(Paint.Style.FILL);
         mBackgroundPaint.setColor(backgroundColor);
@@ -38,29 +34,23 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
     @Override
     protected void drawDataSet(Canvas c, IBarDataSet dataSet, int index) {
         Transformer trans = mChart.getTransformer(dataSet.getAxisDependency());
-
         mBarBorderPaint.setColor(dataSet.getBarBorderColor());
         mBarBorderPaint.setStrokeWidth(Utils.convertDpToPixel(dataSet.getBarBorderWidth()));
-
         final boolean drawBorder = dataSet.getBarBorderWidth() > 0.f;
-
         float phaseX = mAnimator.getPhaseX();
         float phaseY = mAnimator.getPhaseY();
-
         BarBuffer buffer = mBarBuffers[index];
         buffer.setPhases(phaseX, phaseY);
         buffer.setDataSet(index);
         buffer.setInverted(mChart.isInverted(dataSet.getAxisDependency()));
         buffer.setBarWidth(mChart.getBarData().getBarWidth());
         buffer.feed(dataSet);
-
         trans.pointValuesToPixel(buffer.buffer);
 
         for (int j = 0; j < buffer.buffer.length; j += 4) {
 
             if (!mViewPortHandler.isInBoundsLeft(buffer.buffer[j + 2]))
                 continue;
-
             if (!mViewPortHandler.isInBoundsRight(buffer.buffer[j]))
                 break;
 
@@ -103,9 +93,7 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
             mValuePaint.setColor(dataSet.getValueTextColor());
 
             ValueFormatter formatter = dataSet.getValueFormatter();
-
             BarBuffer buffer = mBarBuffers[i];
-
             float phaseY = mAnimator.getPhaseY();
 
             for (int j = 0; j < buffer.buffer.length; j += 4) {
@@ -148,7 +136,6 @@ public class RoundedBarChartRenderer extends BarChartRenderer {
                 mRadius, mRadius,   // Bottom right
                 mRadius, mRadius    // Bottom left
         };
-
         path.addRoundRect(rect, corners, Path.Direction.CW);
         c.drawPath(path, paint);
     }

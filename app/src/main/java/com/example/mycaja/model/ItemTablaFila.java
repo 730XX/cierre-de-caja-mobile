@@ -9,11 +9,6 @@ public class ItemTablaFila {
     private String col5; // Quinta columna opcional
     private int numColumnas = 4; // Por defecto 4 columnas
     private boolean noBorder = false; // Sin borde por defecto
-    // numColumnas = 2: 2 columnas
-    // numColumnas = 3: 3 columnas
-    // numColumnas = 4: 4 columnas con fecha (2 líneas en col1)
-    // numColumnas = 44: 4 columnas simples (sin fecha)
-    // numColumnas = 5: 5 columnas
 
     // Constructor para 2 columnas simples con opción de sin borde
     public ItemTablaFila(String col1, String col2, boolean noBorder) {
