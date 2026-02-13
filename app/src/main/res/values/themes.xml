@@ -56,4 +56,26 @@
         <item name="android:textColor">@color/text_65</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
     </style>
+
+    <!-- Tema para Modal Dialog -->
+    <style name="ModalDialogTheme" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- Estilo para DialogFragment - SOLUCIÓN CORRECTA -->
+    <style name="ModalDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/info</item>
+        <item name="android:textColorPrimary">@color/text_85</item>
+        <item name="android:textColorSecondary">@color/text_65</item>
+    </style>
 </resources>

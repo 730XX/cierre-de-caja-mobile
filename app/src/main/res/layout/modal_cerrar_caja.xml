@@ -1,58 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/modal_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#80000000"
+    android:padding="32dp"
     tools:context=".ModalCerrarCajaActivity">
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingHorizontal="24dp"
-        android:paddingTop="@dimen/dimen_10" >
-            <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/modal_border_rounded"
+        android:clipToOutline="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.98">
+        <LinearLayout
+            android:id="@+id/modal_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="@dimen/dimen_10"
+            android:paddingBottom="16dp">
+            <com.example.mycaja.ui.HeaderModal
+                android:id="@+id/header_modal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp"
-                android:background="@drawable/border_bottom"
                 android:layout_marginBottom="@dimen/dimen_16"
-                >
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="22dp"
-                    android:src="@drawable/icon_svg_cash_register"
-                    android:backgroundTint="@color/info"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="8dp">
-                </ImageView>
+                app:headerTitulo="@string/arqueo_caja"
+                app:headerIcono="@drawable/icon_svg_cash_register" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Arqueo de caja"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="24sp">
-
-                </TextView>
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/icon_svg_xmark"
-                    android:backgroundTint="@color/info"
-                    >
-                </ImageView>
-
-            </LinearLayout>
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -76,35 +67,28 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:layout_marginBottom="8dp"
-                                >
-                                
+                                android:layout_marginBottom="8dp">
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:src="@drawable/icon_svg_cash_register"
                                     android:layout_gravity="center_vertical"
                                     android:paddingEnd="4dp"
-                                    app:tint="@color/text_85"
-                                    >
+                                    app:tint="@color/text_85">
                                 </ImageView>
-                                
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Arqueo de caja"
                                     android:fontFamily="@font/roboto_bold"
-                                    android:textSize="16sp"
-                                    >
+                                    android:textSize="16sp">
                                 </TextView>
-                                
                             </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -180,16 +164,18 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:baselineAligned="false"
                                     android:orientation="horizontal">
                                     <LinearLayout
                                         android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_weight="1"
+                                        android:baselineAligned="false"
                                         android:paddingStart="10dp"
                                         android:background="@drawable/border_bottom">
                                         <LinearLayout
                                             android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
+                                            android:layout_height="match_parent"
                                             android:layout_weight="1"
                                             android:orientation="vertical"
                                             android:paddingHorizontal="@dimen/dimen_10"
@@ -318,11 +304,13 @@
                         </LinearLayout>
                     </LinearLayout>
 
+                    <!-- contenedor de billetes y monedas  -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:baselineAligned="false"
                         android:orientation="horizontal">
-                        <!-- billetes y monedas  -->
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -367,9 +355,7 @@
                                         android:layout_height="wrap_content"
                                         android:orientation="horizontal"
                                         android:background="@color/background_light"
-                                        android:paddingHorizontal="10dp"
-
-                                        >
+                                        android:paddingHorizontal="10dp">
 
                                         <TextView
                                             android:layout_width="0dp"
@@ -400,7 +386,6 @@
                                             android:textSize="12sp"
                                             android:padding="8dp"
                                             android:gravity="center_horizontal"/>
-
 
                                     </LinearLayout>
 
@@ -454,8 +439,49 @@
                                         android:paddingHorizontal="10dp"
                                         android:paddingBottom="8dp"
                                         android:paddingTop="8dp"
-                                        android:background="@drawable/border_bottom"
-                                        >
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="S/ 10.00"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:paddingBottom="8dp"
+                                        android:paddingTop="8dp"
+                                        android:background="@drawable/border_bottom">
 
                                         <TextView
                                             android:layout_width="0dp"
@@ -498,8 +524,7 @@
                                         android:paddingHorizontal="10dp"
                                         android:paddingBottom="8dp"
                                         android:paddingTop="8dp"
-                                        android:background="@drawable/border_bottom"
-                                        >
+                                        android:background="@drawable/border_bottom">
 
                                         <TextView
                                             android:layout_width="0dp"
@@ -532,51 +557,6 @@
                                             android:textSize="14sp"
                                             android:padding="8dp"
                                             android:gravity="center_horizontal"/>
-
-
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal"
-                                        android:paddingHorizontal="10dp"
-                                        android:paddingBottom="8dp"
-                                        android:paddingTop="8dp"
-                                        android:background="@drawable/border_bottom"
-                                        >
-
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"
-                                            android:text="S/ 10.00"
-                                            android:fontFamily="@font/roboto"
-                                            android:textSize="14sp"
-                                            android:paddingVertical="8dp"
-                                            android:gravity="start"/>
-
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"
-                                            android:text="0"
-                                            android:fontFamily="@font/roboto"
-                                            android:textSize="14sp"
-                                            android:background="@drawable/border_rounded"
-                                            android:padding="8dp"
-                                            android:textColor="@color/text_25"
-                                            android:gravity="center_horizontal"/>
-
-                                        <TextView
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"
-                                            android:layout_weight="1"
-                                            android:text="S/ 0.00"
-                                            android:fontFamily="@font/roboto"
-                                            android:textSize="14sp"
-                                            android:padding="8dp"
-                                            android:gravity="center_horizontal"/>
-
 
                                     </LinearLayout>
 
@@ -771,7 +751,6 @@
                                             android:padding="8dp"
                                             android:gravity="center_horizontal"/>
 
-
                                     </LinearLayout>
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -815,7 +794,6 @@
                                             android:padding="8dp"
                                             android:gravity="center_horizontal"/>
 
-
                                     </LinearLayout>
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -824,8 +802,7 @@
                                         android:paddingHorizontal="10dp"
                                         android:paddingBottom="8dp"
                                         android:paddingTop="8dp"
-                                        android:background="@drawable/border_bottom"
-                                        >
+                                        android:background="@drawable/border_bottom">
 
                                         <TextView
                                             android:layout_width="0dp"
@@ -892,11 +869,843 @@
                                             android:textColor="@color/text_85"
                                             android:gravity="center_horizontal"/>
                                     </LinearLayout>
+
                                 </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--contenedor de transferencias y control de tarjetas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+                        <!-- contenedor de transferencias y control de tarjetas -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="@dimen/dimen_16">
+
+                            <!-- Transferencias -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="@dimen/dimen_16">
+                                <!-- titulo e icono -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="8dp">
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/svg_icon_money_bill_transfer"
+                                        android:layout_gravity="center_vertical"
+                                        android:paddingEnd="4dp"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="16sp"
+                                        android:fontFamily="@font/roboto_bold"
+                                        android:text="Transferencias"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <!-- header -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:background="@color/background_light"
+                                        android:paddingHorizontal="10dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Denominación"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:padding="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Cantidad"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                    </LinearLayout>
+
+                                    <!-- futuros recicle view -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Pago en línea"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Pago por transferencia"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Pago por vale"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+
+                                    </LinearLayout>
+
+
+                                    <!-- footer -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:background="@color/middle_night"
+                                        android:paddingHorizontal="10dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.70"
+                                            android:text="TOTAL"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:textColor="@color/text_85"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.30"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="16sp"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_85"
+                                            android:gravity="center_horizontal"/>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Control de tarjetas -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <!-- titulo e icono -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="8dp">
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:paddingEnd="4dp"
+                                        android:src="@drawable/icon_svg_card_warning"
+                                        app:tint="@color/text_85"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="16sp"
+                                        android:fontFamily="@font/roboto_bold"
+                                        android:text="Control de tarjetas"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <!-- header -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:background="@color/background_light"
+                                        android:paddingHorizontal="10dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Tarjeta"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:padding="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Monto por sistema"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Cantidad"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="Lote"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+                                    </LinearLayout>
+
+                                    <!-- futuros recicle view -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="VISA"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:layout_marginEnd="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="BANCOLOMBIA"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:layout_marginEnd="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="DAVIPLATA"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:layout_marginEnd="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="10dp"
+                                        android:layout_marginTop="8dp"
+                                        android:paddingBottom="8dp"
+                                        android:background="@drawable/border_bottom">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="RAPPI"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:padding="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:layout_marginEnd="8dp"
+                                            android:gravity="center_horizontal"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text="0"
+                                            android:fontFamily="@font/roboto"
+                                            android:textSize="14sp"
+                                            android:background="@drawable/border_rounded"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_25"
+                                            android:gravity="center_horizontal"/>
+
+
+
+                                    </LinearLayout>
+
+
+                                    <!-- footer -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:background="@color/middle_night"
+                                        android:paddingHorizontal="10dp">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.70"
+                                            android:text="TOTAL"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="12sp"
+                                            android:textColor="@color/text_85"
+                                            android:paddingVertical="8dp"
+                                            android:gravity="start"/>
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.30"
+                                            android:text="S/ 0.00"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:textSize="16sp"
+                                            android:padding="8dp"
+                                            android:textColor="@color/text_85"
+                                            android:gravity="center_horizontal"/>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--contenedor de ultima tabla -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <!--header -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:orientation="horizontal"
+                            android:background="@color/info_5">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Arqueo"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Efectivo"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Tarjetas"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Transferencias"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Ventas del día"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Sobrante"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:text="Faltante"
+                                android:gravity="center_horizontal"
+                                android:fontFamily="roboto"
+                                android:layout_weight="1"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="Manual"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="Sistema"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto_bold"
+                                    android:layout_weight="1"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+
+                                    android:gravity="center"
+                                    android:fontFamily="roboto_bold"
+                                    android:layout_weight="1"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto_bold"
+                                    android:layout_weight="1"
+                                    />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto_bold"
+                                    android:layout_weight="1"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:textSize="12sp"
+                                    android:text="$0"
+                                    android:gravity="center"
+                                    android:fontFamily="roboto"
+                                    android:layout_weight="1"
+                                    />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+        <!-- Footer con botones fijos -->
+        <com.example.mycaja.ui.FooterModal
+            android:id="@+id/footer_modal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textoCancelar="Cancelar"
+            app:iconoCancelar="@drawable/icon_svg_circle_xmark"
+            app:textoPrimario="Guardar arqueo"
+            app:iconoPrimario="@drawable/object_intersect"
+            app:colorPrimario="@color/info" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

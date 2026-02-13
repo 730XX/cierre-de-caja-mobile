@@ -33,4 +33,23 @@
         <attr name="tablaIcono" format="reference"/>
         <attr name="tablaColorTitulo" format="color"/>
     </declare-styleable>
+
+    <!-- footer modal -->
+    <declare-styleable name="FooterModal">
+        <!-- Botón Cancelar -->
+        <attr name="textoCancelar" format="string"/>
+        <attr name="iconoCancelar" format="reference"/>
+
+        <!-- Botón Primario -->
+        <attr name="textoPrimario" format="string"/>
+        <attr name="iconoPrimario" format="reference"/>
+        <attr name="colorPrimario" format="color"/>
+    </declare-styleable>
+
+    <!-- Header modal-->
+    <declare-styleable name="HeaderModal">
+        <attr name="headerTitulo" format="string" />
+        <attr name="headerIcono" format="reference" />
+        <attr name="headerIconoTint" format="color" />
+    </declare-styleable>
 </resources>

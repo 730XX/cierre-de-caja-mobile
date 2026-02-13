@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/modal_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:paddingHorizontal="280dp"
+    tools:context=".ModalListaVentasPropinaFragment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/modal_border_rounded"
+        android:clipToOutline="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.65">
+
+        <LinearLayout
+            android:id="@+id/modal_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="@dimen/dimen_10"
+            android:paddingBottom="16dp">
+
+            <com.example.mycaja.ui.HeaderModal
+                android:id="@+id/header_modal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_16"
+                app:headerTitulo="Lista de ventas con propina"
+                app:headerIcono="@drawable/icon_svg_rectangle_list_regular"/>
+
+           <ScrollView
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Podemos regisrar un egreso por el monto total de las propinas has el momento"
+                       android:fontFamily="@font/roboto"
+                       android:textSize="12sp"
+                       android:paddingBottom="10dp"
+                       android:textColor="@color/text_25"/>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal">
+
+                       <CheckBox
+                           android:layout_width="20dp"
+                           android:layout_height="20dp"
+                           android:layout_gravity="center_vertical"
+                           android:scaleX="0.7"
+                           android:scaleY="0.7"
+                           android:layout_marginEnd="4dp"/>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/roboto"
+                           android:textSize="14sp"
+                           android:text="separar egresos por usuarios"/>
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:layout_marginTop="@dimen/dimen_10"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="@color/background_light"
+                       android:padding="4dp"
+                       android:orientation="horizontal">
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:text="Tipo doc."
+                           android:textColor="@color/text_45"
+                           android:fontFamily="@font/roboto"
+                           android:layout_weight="1"/>
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:text="Serie/Nro."
+                           android:textColor="@color/text_45"
+                           android:fontFamily="@font/roboto"
+                           android:gravity="center_horizontal"
+                           android:layout_weight="1"/>
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:text="Propina"
+                           android:textColor="@color/text_45"
+                           android:fontFamily="@font/roboto"
+                           android:gravity="center_horizontal"
+                           android:layout_weight="1"/>
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:text="Comisión"
+                           android:textColor="@color/text_45"
+                           android:fontFamily="@font/roboto"
+                           android:layout_weight="1"
+                           android:gravity="center_horizontal"/>
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:text="Total propina"
+                           android:textColor="@color/text_45"
+                           android:fontFamily="@font/roboto"
+                           android:gravity="center_horizontal"
+                           android:layout_weight="1"/>
+                   </LinearLayout>
+
+                   <!-- Contenido principal: RecyclerView para la lista -->
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/rv_ventas_propina"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:overScrollMode="never"
+                       tools:listitem="@layout/item_venta_propina"
+                       tools:itemCount="5"/>
+
+               </LinearLayout>
+           </ScrollView>
+        </LinearLayout>
+
+        <com.example.mycaja.ui.FooterModal
+            android:id="@+id/footer_modal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textoCancelar="Cancelar"
+            app:iconoCancelar="@drawable/icon_svg_circle_xmark"
+            app:textoPrimario="Registrar egreso"
+            app:iconoPrimario="@drawable/object_intersect"
+            app:colorPrimario="@color/info" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

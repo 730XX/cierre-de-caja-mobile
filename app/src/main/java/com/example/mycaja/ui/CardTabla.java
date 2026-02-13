@@ -16,12 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.mycaja.R;
 import com.example.mycaja.adapter.TablaAdapter;
 import com.example.mycaja.model.ItemTablaFila;
-import com.example.mycaja.utils.TextUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -167,8 +164,6 @@ public class CardTabla extends LinearLayout {
             ivIcono.setColorFilter(colorTitulo);
         }
     }
-
-    // ========== MÉTODOS PÚBLICOS ==========
 
     /**
      * Configura los headers de la tabla (2 columnas)

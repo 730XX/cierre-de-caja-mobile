@@ -1,0 +1,149 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/modal_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:paddingHorizontal="32dp"
+    tools:context=".ModalImprimirPaloteoFragment">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/modal_border_rounded"
+        android:clipToOutline="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.85">
+        <LinearLayout
+            android:id="@+id/modal_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="@dimen/dimen_10"
+            android:paddingBottom="16dp">
+
+            <com.example.mycaja.ui.HeaderModal
+                android:id="@+id/header_modal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_16"
+                app:headerTitulo="@string/paloteo"
+                app:headerIcono="@drawable/icon_svg_print_blue"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="16sp"
+                            android:text="Canal de venta"/>
+
+                        <Spinner
+                            android:id="@+id/spinnerCanalVenta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minWidth="140dp"
+                            android:paddingVertical="6dp"
+                            android:paddingHorizontal="12dp"
+                            android:background="@drawable/border_rounded"/>
+
+                    </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="16sp"
+                            android:text="Ordenar por"/>
+
+                        <Spinner
+                            android:id="@+id/spinnerFiltros"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minWidth="140dp"
+                            android:paddingVertical="6dp"
+                            android:paddingHorizontal="12dp"
+                            android:background="@drawable/border_rounded"/>
+                    </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp">
+                
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_svg_print_blue"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccione una impresora"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/info"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_impresoras"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:listitem="@layout/item_impresora_imprimir_paloteo"
+                    tools:itemCount="6"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.example.mycaja.ui.FooterModal
+            android:id="@+id/footer_modal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textoCancelar="Cancelar"
+            app:iconoCancelar="@drawable/icon_svg_circle_xmark"
+            app:textoPrimario="Imprimir productos"
+            app:iconoPrimario="@drawable/icon_scg_print_white"
+            app:colorPrimario="@color/info" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

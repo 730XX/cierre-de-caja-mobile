@@ -1,11 +1,9 @@
 package com.example.mycaja.utils;
-
 import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.StyleSpan;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -125,7 +123,6 @@ public class TextUtils {
             int inicioSpan = builder.length();
             builder.append(partes[i]);
             int finSpan = builder.length();
-
             // Los elementos impares están entre delimitadores (deben ir en negrita)
             if (i % 2 == 1) {
                 builder.setSpan(
@@ -183,13 +180,11 @@ public class TextUtils {
      */
     public static SpannableString combinarSpannables(SpannableString... spannables) {
         SpannableStringBuilder builder = new SpannableStringBuilder();
-
         for (SpannableString spannable : spannables) {
             if (spannable != null) {
                 builder.append(spannable);
             }
         }
-
         return new SpannableString(builder);
     }
 
@@ -269,8 +264,7 @@ public class TextUtils {
      * @param patronesRegex Array de patrones regex a poner en negrita
      * @return SpannableString con todas las coincidencias en negrita
      */
-    public static SpannableString aplicarNegritaCombinado(String textoCompleto,
-            String[] palabrasClave, String[] patronesRegex) {
+    public static SpannableString aplicarNegritaCombinado(String textoCompleto, String[] palabrasClave, String[] patronesRegex) {
         if (textoCompleto == null || textoCompleto.isEmpty()) {
             return new SpannableString("");
         }
@@ -302,7 +296,6 @@ public class TextUtils {
                     try {
                         Pattern pattern = Pattern.compile(patron);
                         Matcher matcher = pattern.matcher(textoCompleto);
-
                         while (matcher.find()) {
                             rangosNegrita.add(new int[]{matcher.start(), matcher.end()});
                         }
@@ -322,7 +315,6 @@ public class TextUtils {
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             );
         }
-
         return spannableString;
     }
 }

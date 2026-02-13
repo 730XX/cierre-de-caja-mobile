@@ -1,16 +1,15 @@
 package com.example.mycaja;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -19,7 +18,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.widget.NestedScrollView;
 import android.view.MotionEvent;
-
 import com.example.mycaja.model.ItemCategoria;
 import com.example.mycaja.model.ItemMovimiento;
 import com.example.mycaja.model.ItemProductoEstrella;
@@ -29,8 +27,8 @@ import com.example.mycaja.model.ResumenPagos;
 import com.example.mycaja.model.DatosCreditos;
 import com.example.mycaja.model.DatosAtenciones;
 import com.example.mycaja.model.DatosImpuestos;
+import com.example.mycaja.ui.BotonReutilizable;
 import com.example.mycaja.ui.CardResumen;
-import com.example.mycaja.utils.TextUtils;
 import com.example.mycaja.adapter.CustomSpinnerAdapter;
 import com.example.mycaja.ui.CardTabla;
 import com.example.mycaja.ui.RoundedBarChartRenderer;
@@ -49,7 +47,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     private CardResumen cardIngresos, cardEgresos;
     private CardResumen cardCorrelativos, cardTransaccionesHechas, cardTransaccionesAnuladas;
     private CardTabla cardMovimientosIngresos, cardMovimientosEgresos;
@@ -86,13 +83,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        initBotonesModales();
         // Inicializar datos de caja y resumen
         initDatosCaja();
         initResumenPagos();
         initDatosCreditos();
         initDatosAtenciones();
         initDatosImpuestos();
-
         // Inicializar Cards
         initCardIngresos();
         initCardEgresos();
@@ -105,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         initCardIngresosDelivery();
         initCardIngresosPropinas();
         initCardIngresosCreditos();
-
         // Inicializar Tabs
         initTabs();
         // Inicializar Gráficos
@@ -131,7 +127,6 @@ public class MainActivity extends AppCompatActivity {
         // Configurar adapters personalizados
         CustomSpinnerAdapter adapterProductos = new CustomSpinnerAdapter(this, productos);
         spinnerProductos.setAdapter(adapterProductos);
-
         CustomSpinnerAdapter adapterPeriodos = new CustomSpinnerAdapter(this, periodos);
         spinnerPeriodo.setAdapter(adapterPeriodos);
 
@@ -191,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
         datosCorrelativos.add(new ItemMovimiento("Nota de debito Boletas", "-"));
         datosCorrelativos.add(new ItemMovimiento("Nota de credito Facturas", "-"));
         datosCorrelativos.add(new ItemMovimiento("Nota de debito Facturas", "-"));
-
         cardCorrelativos.setRecyclerData(datosCorrelativos);
     }
 
@@ -639,6 +633,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void initProductosEstrella() {
         listaOtrosProductosEstrella = findViewById(R.id.listaOtrosProductosEstrella);
         nestedScrollProductos = findViewById(R.id.nestedScrollProductos);
@@ -822,6 +817,40 @@ public class MainActivity extends AppCompatActivity {
         // Setear datos en los TextViews
         tvImpuestosIgv.setText(impuestos.getIgv());
         tvImpuestosIcbper.setText(impuestos.getIcbper());
+    }
+
+    /**
+     * Inicializa la funcion de abrir modales para cada boton
+     */
+    private void initBotonesModales(){
+        // Configurar botón de cerrar caja para abrir modal
+        BotonReutilizable btnCerrarCaja = findViewById(R.id.btn_cerrar_caja);
+        btnCerrarCaja.setOnClickListener(v -> {
+            // Buscamos si ya hay una instancia de la modal activa para evitar button spamming :v
+            if (getSupportFragmentManager().findFragmentByTag("CerrarCajaModal") == null) {
+                ModalCerrarCajaActivity modal = ModalCerrarCajaActivity.newInstance();
+                modal.show(getSupportFragmentManager(), "CerrarCajaModal");
+            }
+        });
+
+        // Configurar botón de cerrar caja para abrir modal
+        BotonReutilizable btnImprimirPaloteo = findViewById(R.id.btn_imprimir_paloteo);
+        btnImprimirPaloteo.setOnClickListener(v -> {
+            // Buscamos si ya hay una instancia de la modal activa para evitar button spamming :v
+            if (getSupportFragmentManager().findFragmentByTag("ModalImprimirPaloteo") == null) {
+                ModalImprimirPaloteoFragment modal = ModalImprimirPaloteoFragment.newInstance();
+                modal.show(getSupportFragmentManager(), "ModalImprimirPaloteo");
+            }
+        });
+
+        // Configurar botón de egreso propina para abrir modal
+        BotonReutilizable btnEgresoPropina = findViewById(R.id.btn_egreso_propina);
+        btnEgresoPropina.setOnClickListener(v -> {
+            if (getSupportFragmentManager().findFragmentByTag("ModalListaVentasPropina") == null) {
+                ModalListaVentasPropinaFragment modal = ModalListaVentasPropinaFragment.newInstance();
+                modal.show(getSupportFragmentManager(), "ModalListaVentasPropina");
+            }
+        });
     }
 }
 

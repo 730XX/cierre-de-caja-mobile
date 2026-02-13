@@ -251,6 +251,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
                             <com.example.mycaja.ui.BotonReutilizable
+                                android:id="@+id/btn_cerrar_caja"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/dimen_10"
@@ -261,6 +262,7 @@
                                 app:icon="@drawable/icon_svg_cash_register"
                                 app:tipoBoton="bordeado" />
                             <com.example.mycaja.ui.BotonReutilizable
+                                android:id="@+id/btn_imprimir_paloteo"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/dimen_10"
@@ -271,6 +273,7 @@
                                 app:icon="@drawable/icon_svg_print_blue"
                                 app:tipoBoton="bordeado" />
                             <com.example.mycaja.ui.BotonReutilizable
+                                android:id="@+id/btn_egreso_propina"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/dimen_10"
@@ -529,7 +532,7 @@
                                     android:text="Créditos"
                                     android:textColor="@color/info"
                                     android:textSize="16sp"
-                                    android:textStyle="bold" />
+                                    android:textStyle="bold"/>
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -550,7 +553,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="4dp"
                                         android:text="Créditos generados"
-                                        android:textColor="@color/text_25" />
+                                        android:textColor="@color/text_25"/>
                                     <TextView
                                         android:id="@+id/tvCreditosGenerados"
                                         android:layout_width="wrap_content"
@@ -558,7 +561,7 @@
                                         android:fontFamily="@font/montserrat_bold"
                                         android:text="0"
                                         android:textColor="@color/text_85"
-                                        android:textSize="16sp" />
+                                        android:textSize="16sp"/>
                                 </LinearLayout>
                                 <!-- Total de créditos (wight 1) -->
                                 <LinearLayout
@@ -574,7 +577,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="4dp"
                                         android:text="Total de créditos"
-                                        android:textColor="@color/text_25" />
+                                        android:textColor="@color/text_25"/>
                                     <TextView
                                         android:id="@+id/tvTotalCreditos"
                                         android:layout_width="wrap_content"
@@ -599,7 +602,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="4dp"
                                         android:text="Vales de pago"
-                                        android:textColor="@color/text_25" />
+                                        android:textColor="@color/text_25"/>
                                     <TextView
                                         android:id="@+id/tvValesPago"
                                         android:layout_width="wrap_content"
@@ -607,7 +610,7 @@
                                         android:fontFamily="@font/montserrat_bold"
                                         android:text="S/00.00"
                                         android:textColor="@color/text_85"
-                                        android:textSize="16sp" />
+                                        android:textSize="16sp"/>
                                 </LinearLayout>
                                 <!-- Monto vales de pago (wight 1) -->
                                 <LinearLayout
@@ -622,7 +625,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="4dp"
                                         android:text="Vales de pago"
-                                        android:textColor="@color/text_25" />
+                                        android:textColor="@color/text_25"/>
                                     <TextView
                                         android:id="@+id/tvMontoValesPago"
                                         android:layout_width="wrap_content"
@@ -630,7 +633,7 @@
                                         android:fontFamily="@font/montserrat_bold"
                                         android:text="S/00.00"
                                         android:textColor="@color/text_85"
-                                        android:textSize="16sp" />
+                                        android:textSize="16sp"/>
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -1105,6 +1108,7 @@
                                     android:textSize="16sp"
                                     android:layout_marginBottom="16dp"/>
                                 <!-- Card con gráfico de pie -->
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"

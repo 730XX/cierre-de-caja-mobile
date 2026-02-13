@@ -6,14 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.mycaja.R;
 import com.example.mycaja.model.ItemMovimiento;
 import com.example.mycaja.utils.TextUtils;
-
 import java.util.List;
 
 public class MovimientosAdapter extends RecyclerView.Adapter<MovimientosAdapter.ViewHolder> {
@@ -88,7 +85,6 @@ public class MovimientosAdapter extends RecyclerView.Adapter<MovimientosAdapter.
         TextView tvConcepto;
         TextView tvCantidad;
         TextView tvMonto;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvConcepto = itemView.findViewById(R.id.tvConcepto);

@@ -2,4 +2,9 @@
     <string name="app_name">Mycaja</string>
     <string name="title">Apertura y cierre</string>
     <string name="cerrar_caja">Cerrar caja</string>
+    <string name="arqueo_caja">Arqueo de caja</string>
+    <string name="paloteo">Imprimir paloteo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

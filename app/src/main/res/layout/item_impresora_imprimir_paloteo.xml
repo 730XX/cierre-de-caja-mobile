@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_card_selector_modal_imprimir"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginBottom="16dp">
+
+        <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/icon_svg_print_blue"
+        app:tint="@color/text_85"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_nombre_impresora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_85"
+                    android:textStyle="bold"
+                    android:text="Nombre"/>
+
+                <ImageView
+                    android:id="@+id/iv_tipo_conexion"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="6dp"
+                    android:src="@drawable/icon_svg_bluetooh"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_modelo_impresora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textSize="10sp"
+                android:textColor="@color/text_45"
+                android:layout_marginTop="2dp"
+                android:text="Modelo"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_tipo_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="10sp"
+                android:textColor="@color/info"
+                android:layout_marginEnd="16dp"
+                android:text="TIPO"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="10sp"
+            android:textColor="@color/primary"
+            android:text="Estado"/>
+
+</LinearLayout>
